@@ -1,3 +1,3 @@
-# Real Estates comparison - Case Study - React
+# Real Estates comparison - React
 
 
