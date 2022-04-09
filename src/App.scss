@@ -10,78 +10,89 @@ $danger_color: #f09191;
 
 html,
 body {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	font-family: $header_font;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: $header_font;
 }
 *,
 *:before,
 *:after {
-	box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 .comparison__container {
-	.comparison__title {
-		border-bottom: 1px solid;
-		color: $alt_color;
-		font-size: 2.5em;
-		margin: 0;
-		padding: 1em 0 0.5em;
-		text-align: center;
-	}
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
 
-	.estates {
-		display: flex;
-		gap: 0.25em;
-		padding: 2% 5%;
+  .comparison__title {
+    border-bottom: 1px solid;
+    color: $alt_color;
+    font-size: 2.5em;
+    margin: 0;
+    padding: 1em 0 0.5em;
+    text-align: center;
+  }
 
-		.estate__container {
-			width: 10%;
-			&:hover {
-				color: red;
-			}
+  .resetButton__container {
+    align-self: center;
+    @import "./styles/button.scss";
+  }
 
-			.estate__image {
-				width: 100%;
-			}
-		}
-	}
-	.compare__estates__container {
-		display: flex;
-		gap: 1em;
-		justify-content: center;
+  .estates {
+    display: flex;
+    gap: 0.25em;
+    padding: 2% 5%;
 
-		.selected__estate__card {
-			border: 1px solid $alt_color;
-			border-radius: 5px;
-			padding: 0.5em;
+    .estate__container {
+      width: 10%;
+      &:hover {
+        background-color: $alt_color;
+        cursor: pointer;
+      }
 
-			.selected__estate__details {
-				.selected__estate__properties {
-					padding: 0.25em 0;
-				}
-				.properties__container {
-					align-items: center;
-					display: flex;
-					justify-content: space-between;
-					padding: 0.5em;
+      .estate__image {
+        width: 100%;
+      }
+    }
+  }
+  .compare__estates__container {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
 
-					.properties {
-						font-weight: 600;
-					}
-				}
-				.agency {
-					gap: 0.5em;
-					justify-content: flex-start;
-				}
-				.positive {
-					background-color: $success_color;
-				}
-				.negative {
-					background-color: $danger_color;
-				}
-			}
-		}
-	}
+    .selected__estate__card {
+      border: 1px solid $alt_color;
+      border-radius: 5px;
+      padding: 0.5em;
+
+      .selected__estate__details {
+        .selected__estate__properties {
+          padding: 0.25em 0;
+        }
+        .properties__container {
+          align-items: center;
+          display: flex;
+          justify-content: space-between;
+          padding: 0.5em;
+
+          .properties {
+            font-weight: 600;
+          }
+        }
+        .agency {
+          gap: 0.5em;
+          justify-content: flex-start;
+        }
+        .positive {
+          background-color: $success_color;
+        }
+        .negative {
+          background-color: $danger_color;
+        }
+      }
+    }
+  }
 }
